@@ -7,6 +7,9 @@ import CancellationPolicy from '@/components/booking/CancellationPolicy';
 
 import { BookingDetailsProps, PolicyDetailsProps } from '@/interfaces';
 
+//one need to intilize to ensure type safety and code completion
+// Initialize booking details and policy info with sample data
+// This is just sample data; replace with actual data as needed
 const bookingDetails: BookingDetailsProps = {
   propertyName: 'Oceanfront Paradise Villa',
   image: 'https://example.com/property.jpg',
