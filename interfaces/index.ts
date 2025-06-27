@@ -19,3 +19,40 @@ export interface PropertyProps {
     discount: string;
 }
    
+export interface BookingFormProps {
+    FirstName: string;
+    LastName: string;
+    Email: string;
+    PhoneNumber: string;
+    PaymentInformation: {
+        CardNumber: string;
+        ExpiryDate: string;
+        CVV: string;
+    };
+    BillingAddress: {
+        Street: string;
+        AptSuite: string;
+        City: string;
+        State: string;
+        ZipCode: string;
+        Country: string;
+    }
+
+};
+
+export interface BookingDetailsProps {
+  propertyName: string;
+  image: string; // Use string (URL) instead of ImageBitmap (not React-friendly)
+  reviewScore: number;
+
+  stayDetails: {
+    startDate: Date;
+    totalNights: number; 
+  };
+
+  breakdownOfFees: {
+    bookingFee: number;
+    subtotal: number;
+    grandTotal: number;
+  };
+}
