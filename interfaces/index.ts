@@ -56,3 +56,9 @@ export interface BookingDetailsProps {
     grandTotal: number;
   };
 }
+
+export interface PolicyDetailsProps {
+  freeCancellationDate: string; // e.g., "Aug 23"
+  partialRefundDate: string;    // e.g., "Aug 24"
+  groundRules: string[];        // e.g., ["Follow the house rules", "Treat the Host’s home like your own"]
+}
