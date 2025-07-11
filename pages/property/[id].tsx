@@ -5,8 +5,7 @@ import axios from 'axios';
 // React hooks: useState stores data, useEffect runs code when the component loads and updates
 import {useState,useEffect} from 'react';
 // A component that will display the details property info
-import PropertyDetail from "@/components/property/PropertyDetail"
-import { error } from 'console';
+import PropertyDetail from "@/components/property/PropertyDetail";
 
 //a react component to show details of one specific propert based on the ID in the URL
 export default function PropertyDetailPage() {

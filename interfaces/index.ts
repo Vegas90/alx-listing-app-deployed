@@ -62,3 +62,15 @@ export interface PolicyDetailsProps {
   partialRefundDate: string;    // e.g., "Aug 24"
   groundRules: string[];        // e.g., ["Follow the house rules", "Treat the Host’s home like your own"]
 }
+
+export interface PropertyProps {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  price: number;
+  location: string;
+  bedrooms: number;
+  bathrooms: number;
+  size: number;
+}
