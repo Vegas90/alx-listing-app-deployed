@@ -32,9 +32,80 @@ export default function BookingForm() {
     }
   };
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
   return (
     <form onSubmit={handleSubmit}>
-      {/* Form fields for booking details */}
+      <input
+        type="text"
+        name="firstName"
+        placeholder="First Name"
+        value={formData.firstName}
+        onChange={handleChange}
+        required
+      />
+      <input
+        type="text"
+        name="lastName"
+        placeholder="Last Name"
+        value={formData.lastName}
+        onChange={handleChange}
+        required
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        value={formData.email}
+        onChange={handleChange}
+        required
+      />
+      <input
+        type="tel"
+        name="phoneNumber"
+        placeholder="Phone Number"
+        value={formData.phoneNumber}
+        onChange={handleChange}
+        required
+      />
+      <input
+        type="text"
+        name="cardNumber"
+        placeholder="Card Number"
+        value={formData.cardNumber}
+        onChange={handleChange}
+        required
+      />
+      <input
+        type="text"
+        name="expirationDate"
+        placeholder="Expiration Date"
+        value={formData.expirationDate}
+        onChange={handleChange}
+        required
+      />
+      <input
+        type="text"
+        name="cvv"
+        placeholder="CVV"
+        value={formData.cvv}
+        onChange={handleChange}
+        required
+      />
+      <input
+        type="text"
+        name="billingAddress"
+        placeholder="Billing Address"
+        value={formData.billingAddress}
+        onChange={handleChange}
+        required
+      />
       <button type="submit" disabled={loading}>
         {loading ? "Processing..." : "Confirm & Pay"}
       </button>
