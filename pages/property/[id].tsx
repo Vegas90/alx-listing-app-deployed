@@ -15,8 +15,32 @@ const router  = useRouter();
 // extract id of the property from the URL
  const {id} = router.query;
 
- //create a state to share the propert data once fetched
-    const [property, setProperty] = useState(null);
+ // Define a type for your property data (adjust fields as needed)
+ type Property = {
+    id: string;
+    title: string;
+    description: string;
+    price: number;
+    name: string;
+    address: string;
+    rating: number;
+    category: string;
+    images: string[];
+    bedrooms: number;
+    bathrooms: number;
+    area: number;
+    amenities: string[];
+    owner: string;
+    offers: string[]; // Add offers field
+    image: string; // Add image field
+    discount: number; // Add discount field
+    location: string; // Add location field
+    size: number; // Add size field
+    // add other fields as needed to match PropertyProps
+ };
+
+ //create a state to share the property data once fetched
+ const [property, setProperty] = useState<Property | null>(null);
 
 //create a state to show a loading message  wbhile the data is being fetched
     const [loading, setLoading] = useState(true);
@@ -32,7 +56,7 @@ useEffect(() => {
         // try to fetch the property data from the API
         try {
             //call API to fetch the property using the id from the URL
-            const response = await axios.get(`api/properties/${id}`);
+            const response = await axios.get<Property>(`${process.env.NEXT_PUBLIC_API_BASE_URL}/properties/${id}`);
             //save the response (property data)
             setProperty(response.data);
         }
@@ -62,6 +86,6 @@ if (!property) {
     return <div>Error: Property not found</div>;
     }
     //return the PropertyDetail component with the fetched property data
-    return <PropertyDetail property={property} />;
+   // return <PropertyDetail property={property} />;
 }
 

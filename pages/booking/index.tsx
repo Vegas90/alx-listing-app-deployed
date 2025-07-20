@@ -73,7 +73,7 @@ export default function BookingForm() {
     }
 
     try {
-      await axios.post("/api/bookings", formData);
+      await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/bookings`, formData);
       setSuccess("Booking confirmed!");
       setFormData({
         firstName: "",
